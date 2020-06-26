@@ -7,9 +7,6 @@ from kubernetes import client, config
 from kubernetes.client.rest import ApiException
 from os import path
 
-sys.argv.append(10)
-sys.argv.append(5)
-
 if len(sys.argv) < 3:
     print("Number of replicas is expected to be provided as the second argument.")
     print("Number of exections is expected to be provided as the third argument.")
