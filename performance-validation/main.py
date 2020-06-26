@@ -31,7 +31,6 @@ k8s_core = client.CoreV1Api()
 # I know...
 def delete_replica_set():
     try:
-        print("Making sure that replica set was not previously created...")
         k8s_apps.delete_namespaced_replica_set(name=replica_set_yaml['metadata']['name'], namespace=replica_set_yaml['metadata']['namespace'])
         print("Replica set deleted...")
     except ApiException as e:
