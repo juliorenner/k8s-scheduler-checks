@@ -63,6 +63,7 @@ for i in range(number_of_executions):
         else:
             time.sleep(1)
     
+    print("Creating replica set...")
     replica_set = k8s_apps.create_namespaced_replica_set(body=replica_set_yaml, namespace=replica_set_yaml['metadata']['namespace'])
 
     is_ready = False
