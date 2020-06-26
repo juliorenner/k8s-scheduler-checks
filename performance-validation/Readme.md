@@ -10,4 +10,18 @@ External Cluster: GKE 1.17
 Number of K8S Nodes: 100
 
 This validation should be executed in the master node that runs the kubemark components. Use the
-kubemark internal kubeconfig.
+kubemark internal kubeconfig or just configure the external kubeconfig pointing to the internal
+IP:
+
+```yaml
+apiVersion: v1
+clusters:
+- cluster:
+    insecure-skip-tls-verify: true
+    server: https://<INTERNAL_IP>
+  name: kubemark-control-plane-perf_default-kubemark
+contexts:
+```
+
+Do that to reduce latency.
+
