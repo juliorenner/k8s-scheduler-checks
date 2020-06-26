@@ -7,7 +7,7 @@ from os import path
 kubeconfig_path = path.join(path.dirname(__file__),"kubeconfig.kubemark")
 config.load_kube_config(config_file=kubeconfig_path)
 
-with open(path.join(path.dirname(__file__),'replicaset.yaml')) as f:
+with open(path.join(path.dirname(__file__),'replicaset_template.yaml')) as f:
     replica_set_yaml = yaml.safe_load(f)
 
 replica_set_yaml['spec']['replicas'] = 10

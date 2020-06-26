@@ -1,20 +1,19 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: frontend
+  name: validation
   labels:
-    app: guestbook
-    tier: frontend
+    tier: validation
 spec:
   # modify replicas according to your case
   replicas: 0
   selector:
     matchLabels:
-      tier: frontend
+      tier: validation
   template:
     metadata:
       labels:
-        tier: frontend
+        tier: validation
     spec:
       containers:
       - name: hello-kubernetes
